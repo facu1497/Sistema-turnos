@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { DatabaseProvider } from './context/DatabaseContext';
 
 import { AdminLayout, ClientLayout } from './components/Layout';
@@ -16,7 +16,7 @@ import ClientPanel from './pages/client/Panel';
 function App() {
   return (
     <DatabaseProvider>
-      <BrowserRouter>
+      <Router>
         <Routes>
           <Route path="/" element={<Navigate to="/client/login" />} />
           
@@ -36,7 +36,7 @@ function App() {
             <Route path="panel" element={<ClientPanel />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </Router>
     </DatabaseProvider>
   );
 }
